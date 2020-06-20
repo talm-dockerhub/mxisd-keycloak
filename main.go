@@ -35,12 +35,25 @@ func main() {
 		return
 	}
 	http.HandleFunc("/_mxisd/backend/api/v1/auth/login", Authentication)
+    http.HandleFunc("/_ma1sd/backend/api/v1/auth/login", Authentication)
+    
 	http.HandleFunc("/_mxisd/backend/api/v1/directory/user/search", Directory)
+    http.HandleFunc("/_ma1sd/backend/api/v1/directory/user/search", Directory)
+    
 	http.HandleFunc("/_mxisd/backend/api/v1/identity/single", Single3PIDLookUp)
+    http.HandleFunc("/_ma1sd/backend/api/v1/identity/single", Single3PIDLookUp)
+    
 	http.HandleFunc("/_mxisd/backend/api/v1/identity/bulk", Bulk3PIDLookUp)
+    http.HandleFunc("/_ma1sd/backend/api/v1/identity/bulk", Bulk3PIDLookUp)
+    
 	http.HandleFunc("/_mxisd/backend/api/v1/profile/displayName", Profile)
+    http.HandleFunc("/_ma1sd/backend/api/v1/profile/displayName", Profile)
+    
 	http.HandleFunc("/_mxisd/backend/api/v1/profile/threepids", Profile)
+    http.HandleFunc("/_ma1sd/backend/api/v1/profile/threepids", Profile)
+    
 	http.HandleFunc("/_mxisd/backend/api/v1/profile/roles", Profile)
+    http.HandleFunc("/_ma1sd/backend/api/v1/profile/roles", Profile)
 
 	fmt.Println("Backend is running on port 8091")
 	http.ListenAndServe(":8091", nil)
